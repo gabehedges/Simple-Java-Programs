@@ -1,0 +1,46 @@
+//StopLight Class
+public class Stoplight {
+
+private int currentColor; // color is stored as an integer, 0 for green, 1 for yellow, 2 for red
+
+public int Stoplight() {
+// Fill in the constructor.  New stoplights should show red by default
+currentColor = 2;
+return currentColor;
+}
+
+public String getColor() {
+// Fill in the method.  It should return the String "RED", "YELLOW", or "GREEN" as appropriate
+String colorString;
+if (currentColor == 0) {
+colorString = "GREEN";
+} else if (currentColor ==1) {
+colorString = "YELLOW";
+} else { colorString = "RED"; }
+return colorString;
+}
+
+public void changeColor() {
+// Fill in the method.  If the light is currently red, it should change to green.  If the light
+// is currently green it should change to yellow.  And if the light is currently yellow it should
+// change to red.
+if (currentColor == 2) {
+currentColor = 0;
+} else if (currentColor == 1) {
+currentColor = 2;
+} else { currentColor = 1; }
+   }
+}
+
+//Test Program
+public class TestLight {
+
+	public static void main(String[] args) {
+		Stoplight light = new Stoplight();
+		
+		for (int i = 0; i<20; i++) {
+			System.out.println("The light is " + light.getColor());
+			light.changeColor();
+		}
+	}
+}
